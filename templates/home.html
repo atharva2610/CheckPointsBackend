@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title%}
+
+{% block main %}
+<div class="w-full max-w-screen-md">
+
+    <h1 class="text-xl text-center">Welcome to CheckList!</h1>
+
+    {% comment %} <form method="post" class="card">
+        {% csrf_token %}
+        <div class="flex items-center gap-2 py-4">
+            <input type="text" placeholder="Create New CheckList" class="flex-1 text-lg tracking-wider outline-none" name="project-name" required>
+            <button type="submit" class="icon-btn hover:text-purple-600">
+                <span class="material-symbols-rounded leading-none">add</span>
+            </button>
+        </div>
+    </form>
+
+
+    <div class="card my-8">
+        {% if projects %}
+            {% for project in projects %}
+            <div class="py-4">
+                <a href="{% url 'project_detail' pk=project.id filter_tasks='all' %}" class="flex items-center gap-2 text-lg sm:text-xl hover:text-purple-600">
+                    <span class="material-symbols-rounded leading-none">arrow_forward_ios</span>
+                    {{project.project_name|truncatewords:8}}
+                </a>
+            </div>
+            {% endfor %}
+        {% else %}
+            <h2 class="py-4 text-center text-lg">Nothing to show!</h2>
+        {% endif %}
+    </div> {% endcomment %}
+    
+</div>
+{% endblock main %}
